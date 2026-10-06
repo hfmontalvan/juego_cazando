@@ -46,6 +46,27 @@ moverIzquierda = function(){
     graficarGato();
     graficarComida();
 }
+moverDerecha = function(){
+    gatoX = gatoX + 10;
+    limpiarCanva();
+
+    graficarGato();
+    graficarComida();
+}
+moverArriba = function(){
+    gatoY = gatoY - 10;
+    limpiarCanva();
+
+    graficarGato();
+    graficarComida();
+}
+moverAbajo = function(){
+    gatoY = gatoY + 10;
+    limpiarCanva();
+
+    graficarGato();
+    graficarComida();
+}
 
 
 
