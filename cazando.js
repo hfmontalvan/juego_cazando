@@ -6,6 +6,8 @@ let gatoY = 0;
 let comidaX = 0;
 let comidaY = 0;
 
+let puntaje = 0;
+
 const ALTO_GATO = 100;
 const ANCHO_GATO = 100;
 const ALTO_COMIDA = 40;
@@ -79,9 +81,16 @@ detectarColision = function(){
         gatoY < comidaY + ALTO_COMIDA &&
         gatoY + ALTO_GATO > comidaY
     ){
-        alert("El gato atrapó la comida");
-    }
+        puntaje = puntaje + 1;
+        mostrarTexto("puntos", puntaje);
 
+        comidaX = Math.floor(Math.random() * (canvas.width - ANCHO_COMIDA));
+        comidaY = Math.floor(Math.random() * (canvas.height - ALTO_COMIDA));
+
+        limpiarCanva();
+        graficarGato();
+        graficarComida();
+    }
 }
 
 
