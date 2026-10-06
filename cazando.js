@@ -45,6 +45,7 @@ moverIzquierda = function(){
 
     graficarGato();
     graficarComida();
+    detectarColision();
 }
 moverDerecha = function(){
     gatoX = gatoX + 10;
@@ -52,6 +53,7 @@ moverDerecha = function(){
 
     graficarGato();
     graficarComida();
+    detectarColision();
 }
 moverArriba = function(){
     gatoY = gatoY - 10;
@@ -59,6 +61,7 @@ moverArriba = function(){
 
     graficarGato();
     graficarComida();
+    detectarColision();
 }
 moverAbajo = function(){
     gatoY = gatoY + 10;
@@ -66,8 +69,20 @@ moverAbajo = function(){
 
     graficarGato();
     graficarComida();
+    detectarColision();
 }
+detectarColision = function(){
 
+    if(
+        gatoX < comidaX + ANCHO_COMIDA &&
+        gatoX + ANCHO_GATO > comidaX &&
+        gatoY < comidaY + ALTO_COMIDA &&
+        gatoY + ALTO_GATO > comidaY
+    ){
+        alert("El gato atrapó la comida");
+    }
+
+}
 
 
 
