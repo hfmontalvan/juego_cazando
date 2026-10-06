@@ -36,6 +36,16 @@ graficarRectangulo = function (x, y, ancho, alto, color) {
     contexto.fillStyle = color;
     contexto.fillRect(x, y, ancho, alto);
 }
+limpiarCanva = function(){
+    contexto.clearRect(0,0,canvas.width,canvas.height);    
+}
+moverIzquierda = function(){
+    gatoX = gatoX - 10;
+    limpiarCanva();
+
+    graficarGato();
+    graficarComida();
+}
 
 
 
