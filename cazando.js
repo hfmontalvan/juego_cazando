@@ -90,6 +90,11 @@ detectarColision = function(){
         puntaje = puntaje + 1;
         mostrarTexto("puntos", puntaje);
 
+        if(puntaje == 6){
+            mostrarTexto("mensaje", "GANASTE");
+            clearInterval(intervalo);
+        }
+
         comidaX = Math.floor(Math.random() * (canvas.width - ANCHO_COMIDA));
         comidaY = Math.floor(Math.random() * (canvas.height - ALTO_COMIDA));
 
@@ -102,5 +107,11 @@ detectarColision = function(){
 restarTiempo = function(){
     tiempo = tiempo - 1;
     mostrarTexto("tiempo", tiempo);
+
+    if(tiempo == 0){
+        mostrarTexto("mensaje","GAME OVER");
+        clearInterval(intervalo);
+
+    }
 }
 
