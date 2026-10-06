@@ -115,3 +115,23 @@ restarTiempo = function(){
     }
 }
 
+reiniciar = function(){
+    // Detener el intervalo anterior
+    clearInterval(intervalo);
+
+    // Reiniciar variables
+    puntaje = 0;
+    tiempo = 10;
+
+    // Actualizar pantalla
+    mostrarTexto("puntos", puntaje);
+    mostrarTexto("tiempo", tiempo);
+    mostrarTexto("mensaje", "");
+
+    // Limpiar el canvas
+    limpiarCanva();
+
+    // Iniciar nuevamente el juego
+    iniciarJuego();
+
+}
